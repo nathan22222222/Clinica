@@ -1,11 +1,11 @@
 public class Medicos {
-    private Integer idMedico;
+    private Long idMedico;
     private String nome;
     private String telefone;
     private String crm;
-    private String especialidade;
+    private Especialidades especialidade;
 
-    public Medicos(Integer idMedico, String nome, String telefone, String crm, String especialidade) {
+    public Medicos(Long idMedico, String nome, String telefone, String crm, Especialidades especialidade) {
         this.idMedico = idMedico;
         this.nome = nome;
         this.telefone = telefone;
