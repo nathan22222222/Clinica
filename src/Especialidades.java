@@ -1,6 +1,6 @@
 public enum Especialidades {
     DENTISTA,
+    DERMATOLOGISTA,
     ORTOPEDISTA,
-    OFTAMOLOGISTA,
-    DERMATOLOGISTA;
+    PEDIATRA;
 }

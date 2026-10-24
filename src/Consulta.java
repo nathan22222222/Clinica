@@ -77,4 +77,16 @@ public class Consulta {
     public void setAtendimento(Atendimentos atendimento) {
         this.atendimento = atendimento;
     }
+
+    @Override
+    public String toString() {
+        return "Consulta{" +
+                "idConsulta=" + idConsulta +
+                ", dataConsulta=" + dataConsulta +
+                ", status=" + status +
+                ", atendimento=" + atendimento +
+                ", medico=" + medico +
+                ", paciente=" + paciente +
+                '}';
+    }
 }

@@ -22,6 +22,7 @@ private LocalDateTime fimDoAtendimento;
         this.prescricao = prescricao;
         this.inicioDoAtendimento = inicioDoAtendimento;
         this.fimDoAtendimento = fimDoAtendimento;
+        this.consulta.setStatus(Status.REALIZADA);
     }
 
     public Long getIdAtendimento() {

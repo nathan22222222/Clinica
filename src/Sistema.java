@@ -25,6 +25,7 @@ public class Sistema {
     public void registrarAtendimento (Atendimentos atendimento){
         atendimentos.add(atendimento);
     }
+
     public List<Consulta> consultarHistorico(Pacientes paciente) {
         return consultas.stream()
                 .filter(c -> c.getPaciente().equals(paciente))
@@ -33,12 +34,14 @@ public class Sistema {
 
     public List<Consulta> consultarConsultasDoMedico(Medicos medico) {
         return consultas.stream()
-                .filter(c -> c.getMedico().equals(medico))
-                .toList();
+                .filter(c -> c.getMedico().equals(medico))                .toList();
     }
 
     public void cancelarConsulta(Consulta consulta) {
         consulta.setStatus(Status.CANCELADA);
+    }
+    public List <Consulta> consultarDadosDaConsulta (Consulta consulta){
+        return consultas.stream().toList();
     }
 }
 
