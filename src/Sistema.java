@@ -38,7 +38,7 @@ public class Sistema {
     }
 
     public void cancelarConsulta(Consulta consulta) {
-        consulta.setStatus(Status.CANCELADA);
+            consulta.setStatus(Status.CANCELADA);
     }
     public List <Consulta> consultarDadosDaConsulta (Consulta consulta){
         return consultas.stream().toList();

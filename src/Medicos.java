@@ -1,14 +1,14 @@
 public class Medicos {
     private Long idMedico;
-    private String nome;
-    private String telefone;
+    private String nomeMedico;
+    private String telefoneMedico;
     private String crm;
     private Especialidades especialidade;
 
-    public Medicos(Long idMedico, String nome, String telefone, String crm, Especialidades especialidade) {
+    public Medicos(Long idMedico, String nomeMedico, String telefoneMedico, String crm, Especialidades especialidade) {
         this.idMedico = idMedico;
-        this.nome = nome;
-        this.telefone = telefone;
+        this.nomeMedico = nomeMedico;
+        this.telefoneMedico = telefoneMedico;
         this.crm = crm;
         this.especialidade = especialidade;
     }
@@ -21,20 +21,20 @@ public class Medicos {
         this.idMedico = idMedico;
     }
 
-    public String getNome() {
-        return nome;
+    public String getNomeMedico() {
+        return nomeMedico;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setNomeMedico(String nomeMedico) {
+        this.nomeMedico = nomeMedico;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getTelefoneMedico() {
+        return telefoneMedico;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefoneMedico(String telefoneMedico) {
+        this.telefoneMedico = telefoneMedico;
     }
 
     public String getCrm() {

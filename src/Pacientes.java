@@ -1,21 +1,20 @@
 import java.time.LocalDate;
-import java.util.Date;
 
 public class Pacientes {
     private Long idPaciente;
-    private String nome;
-    private String cpf;
+    private String nomePaciente;
+    private String cpfPaciente;
     private LocalDate dataDeNascimento;
-    private String telefone;
-    private String endereco;
+    private String telefonePaciente;
+    private String enderecoPaciente;
 
-    public Pacientes(Long idPaciente, String nome, String cpf, LocalDate dataDeNascimento, String telefone, String endereco) {
+    public Pacientes(Long idPaciente, String nomePaciente, String cpfPaciente, LocalDate dataDeNascimento, String telefone, String enderecoPaciente) {
         this.idPaciente = idPaciente;
-        this.nome = nome;
-        this.cpf = cpf;
+        this.nomePaciente = nomePaciente;
+        this.cpfPaciente = cpfPaciente;
         this.dataDeNascimento = dataDeNascimento;
-        this.telefone = telefone;
-        this.endereco = endereco;
+        this.telefonePaciente = telefone;
+        this.enderecoPaciente = enderecoPaciente;
     }
 
     public Long getIdPaciente() {
@@ -27,19 +26,19 @@ public class Pacientes {
     }
 
     public String getNome() {
-        return nome;
+        return nomePaciente;
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        this.nomePaciente = nome;
     }
 
-    public String getCpf() {
-        return cpf;
+    public String getCpfPaciente() {
+        return cpfPaciente;
     }
 
-    public void setCpf(String cpf) {
-        this.cpf = cpf;
+    public void setCpfPaciente(String cpfPaciente) {
+        this.cpfPaciente = cpfPaciente;
     }
 
     public LocalDate getDataDeNascimento() {
@@ -50,19 +49,19 @@ public class Pacientes {
         this.dataDeNascimento = dataDeNascimento;
     }
 
-    public String getTelefone() {
-        return telefone;
+    public String getTelefonePaciente() {
+        return telefonePaciente;
     }
 
-    public void setTelefone(String telefone) {
-        this.telefone = telefone;
+    public void setTelefonePaciente(String telefonePaciente) {
+        this.telefonePaciente = telefonePaciente;
     }
 
-    public String getEndereco() {
-        return endereco;
+    public String getEnderecoPaciente() {
+        return enderecoPaciente;
     }
 
-    public void setEndereco(String endereco) {
-        this.endereco = endereco;
+    public void setEnderecoPaciente(String enderecoPaciente) {
+        this.enderecoPaciente = enderecoPaciente;
     }
 }

@@ -1,4 +1,7 @@
+import java.time.LocalDate;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -39,10 +42,14 @@ public void mostrarDadosDaConsulta(){
 
 
     public static void main(String[] args) {
+        List <Medicos> medico = new ArrayList<>();
+        List <Pacientes> pacientes = new ArrayList<>();
+        List <Consulta> consultas = new ArrayList<>();
         Sistema sistema = new Sistema();
         Main main = new Main();
         Scanner scanner = new Scanner(System.in);
         int resposta;
+
         do {
 
 
@@ -70,23 +77,98 @@ public void mostrarDadosDaConsulta(){
                 case 4:
                     sistema.cancelarConsulta();
                     break;
-                case 5:
-                    sistema.cadastrarPaciente();
+                case 5: {
+                    System.out.println("id: ");
+                    Long idPaciente = Long.parseLong(scanner.nextLine());
+                    System.out.println("nome:");
+                    String nomePaciente = scanner.nextLine();
+                    System.out.println("cpf: ");
+                    String cpfPaciente = scanner.nextLine();
+                    System.out.println("data de nascimento: ");
+                    LocalDate dataDeNascimento = LocalDate.parse(scanner.nextLine());
+                    System.out.println("telefone: ");
+                    String telefonePaciente = scanner.nextLine();
+                    System.out.println("endereço: ");
+                    String enderecoPaciente = scanner.nextLine();
+
+                    Pacientes paciente = new Pacientes(
+                            idPaciente,
+                            nomePaciente,
+                            cpfPaciente,
+                            dataDeNascimento,
+                            telefonePaciente,
+                            enderecoPaciente
+                    );
+
+                    sistema.cadastrarPaciente(paciente);
+
                     break;
-                case 6:
-                    sistema.cadastrarMedico();
+                }
+                case 6: {
+                    System.out.println("id: ");
+                    Long idMedico = Long.parseLong(scanner.nextLine());
+                    System.out.println("nome: ");
+                    String nomeMedico = scanner.nextLine();
+                    System.out.println("telefone: ");
+                    String telefoneMedico = scanner.nextLine();
+                    System.out.println("crm: ");
+                    String crm = scanner.nextLine();
+                    System.out.println("especialidade: ");
+                    for (Especialidades e : Especialidades.values()) {
+                        System.out.println(e);
+                    }
+                    Especialidades especialidades = Especialidades.valueOf(scanner.nextLine().toUpperCase());
+
+                    Medicos medicos = new Medicos(idMedico,
+                            nomeMedico,
+                            telefoneMedico,
+                            crm,
+                            especialidades);
+
+                    sistema.cadastrarMedico(medicos);
                     break;
-                case 7:
-                    sistema.registrarConsulta();
+                }
+                case 7: {
+                    System.out.println("id:");
+                    Long idConsulta = Long.parseLong(scanner.nextLine());
+                    System.out.println("data: ");
+                    ZonedDateTime dataConsulta = ZonedDateTime.parse(scanner.nextLine());
+                    Status status = Status.AGENDADA;
+                    System.out.println("Em qual atendimento resultará a consulta?");
+                    Atendimentos atendimentos = null;
+                    System.out.println("médico: ");
+                    Long idMedico = Long.parseLong(scanner.nextLine());
+                    Medicos medicos = medico.stream()
+                                    .filter(m -> m.getIdMedico().equals(idMedico))
+                                            .findFirst()
+                                                    .orElse(null);
+                    System.out.println("paciente: ");
+                    Long idPaciente = Long.parseLong(scanner.nextLine());
+                    Pacientes paciente = pacientes.stream()
+                            .filter(p -> p.getIdPaciente().equals(idPaciente))
+                            .findFirst()
+                            .orElse(null);
+
+                    Consulta consulta = new Consulta(idConsulta,
+                            dataConsulta,
+                            medicos,
+                            paciente,
+                            atendimentos
+                            );
+
+
+                    sistema.registrarConsulta(consulta);
                     break;
+                }
                 case 8:
+                    System.out.println("Encerrando");
                     break;
 
             }
         } while (resposta != 8);
 
 
-    }
+            }
 
 
 
